@@ -1,5 +1,5 @@
 {
-  "name": "stylable-checkbox",
+  "name": "polymer-stylable-checkbox",
   "version": "1.0.0",
   "authors": [
     "Etienne Talbot <etiennetalbot@gmail.com>"
@@ -14,10 +14,8 @@
     "stylable"
   ],
   "main": "stylable-checkbox.html",
-  "homepage": "https://pacman.ixmedia.com/ixmedia/stylable-checkbox",
   "ignore": [
     "/.*",
-    "/test/",
     "/demo/"
   ],
   "dependencies": {
