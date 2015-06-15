@@ -1,0 +1,93 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="stylable-checkbox">
+
+  <style>
+    :host {
+      background: white;
+      border: 1px solid black;
+      cursor: pointer;
+      display: inline-block;
+      height: 1em;
+      user-select: none;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: 1em;
+    }
+    :host[checked] {
+      background: #666;
+    }
+    :host .wc-stylable-checkbox {
+      display: none;
+    }
+  </style>
+
+  <template>
+    <input type="checkbox" name="[[name]]" value="[[value]]" class="wc-stylable-checkbox" tabindex="-1" on-click="_checkboxClicked">
+  </template>
+
+  <script>
+    Polymer({
+      is: "stylable-checkbox",
+
+      listeners: {
+        "click":    "_checkboxClicked",
+        "keypress": "_keyPressed"
+      },
+
+      hostAttributes: {
+        role: 'checkbox',
+        'aria-checked': false,
+        tabindex: 0
+      },
+
+      properties: {
+        name: {
+          type: String,
+          value: ""
+        },
+        value: {
+          type: String,
+          value: "on"
+        },
+        checked: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true
+        }
+      },
+
+      ready: function() {
+        this._updateCheckbox();
+      },
+
+      _updateCheckbox: function() {
+        var hiddenCB = this.querySelector(".wc-stylable-checkbox");
+        var vm = this;
+
+        // Set Timeout needed because of IE when label is clicked
+        setTimeout(function() {
+          hiddenCB.checked = vm.checked;
+        }, 0);
+
+        this.setAttribute("aria-checked", this.checked ? "true" : "false");
+      },
+
+      _checkboxClicked: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        this.checked = !this.checked;
+        this._updateCheckbox();
+      },
+
+      _keyPressed: function(e) {
+        if (e.keyCode == 32 || e.charCode == 32) {
+          this.checked = !this.checked;
+          this._checkboxClicked();
+        }
+      }
+    });
+  </script>
+
+</dom-module>

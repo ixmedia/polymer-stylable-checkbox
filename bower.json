@@ -1,0 +1,26 @@
+{
+  "name": "stylable-checkbox",
+  "version": "1.0.0",
+  "authors": [
+    "Etienne Talbot <etiennetalbot@gmail.com>"
+  ],
+  "description": "A stylable replacement for the input checkbox",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed",
+    "checkbox",
+    "stylable"
+  ],
+  "main": "stylable-checkbox.html",
+  "homepage": "https://pacman.ixmedia.com/ixmedia/stylable-checkbox",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
