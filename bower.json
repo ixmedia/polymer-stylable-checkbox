@@ -14,8 +14,11 @@
     "stylable"
   ],
   "main": "stylable-checkbox.html",
+  "license": "MIT",
+  "homepage": "https://pacman.ixmedia.com/ixmedia/polymer-stylable-checkbox",
   "ignore": [
     "/.*",
+    "/test/",
     "/demo/"
   ],
   "dependencies": {
